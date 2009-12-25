@@ -1,4 +1,6 @@
 # Settings specified here will take precedence over those in config/environment.rb
+config.gem "tomharris-random_data", :lib => 'random_data', :source => "http://gems.github.com", :version => ">= 1.5.1"
+config.gem "factory_girl"
 
 # In the development environment your application's code is reloaded on
 # every request.  This slows down response time but is perfect for development

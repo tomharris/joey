@@ -1,4 +1,8 @@
 # Settings specified here will take precedence over those in config/environment.rb
+config.gem "tomharris-random_data", :lib => 'random_data', :source => "http://gems.github.com", :version => ">= 1.5.1"
+config.gem "rspec", :lib => false
+config.gem "rspec-rails", :lib => false
+config.gem "factory_girl"
 
 # The test environment is used exclusively to run your application's
 # test suite.  You never need to work with it otherwise.  Remember that

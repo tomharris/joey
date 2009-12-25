@@ -15,10 +15,11 @@ Rails::Initializer.run do |config|
   # config.load_paths += %W( #{RAILS_ROOT}/extras )
 
   # Specify gems that this application depends on and have them installed with rake gems:install
-  # config.gem "bj"
-  # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
-  # config.gem "sqlite3-ruby", :lib => "sqlite3"
-  # config.gem "aws-s3", :lib => "aws/s3"
+  config.gem "capistrano", :lib => false, :version => ">= 2.5.5"
+  config.gem "capistrano-ext", :lib => false, :version => ">= 1.2.1"
+  config.gem "mysql", :version => ">= 2.8.1"
+  config.gem "clearance"
+  config.gem "will_paginate"
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
