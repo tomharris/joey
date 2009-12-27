@@ -15,6 +15,7 @@ Rails::Initializer.run do |config|
   # config.load_paths += %W( #{RAILS_ROOT}/extras )
 
   # Specify gems that this application depends on and have them installed with rake gems:install
+  config.gem "authlogic"
   config.gem "capistrano", :lib => false, :version => ">= 2.5.5"
   config.gem "capistrano-ext", :lib => false, :version => ">= 1.2.1"
   config.gem "mysql", :version => ">= 2.8.1"

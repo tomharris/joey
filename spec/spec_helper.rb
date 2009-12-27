@@ -5,6 +5,10 @@ require File.expand_path(File.join(File.dirname(__FILE__),'..','config','environ
 require 'spec/autorun'
 require 'spec/rails'
 
+Dir[File.expand_path(File.dirname(__FILE__)) + "/factories/*.rb"].each do |file|
+  require file
+end
+
 # Uncomment the next line to use webrat's matchers
 #require 'webrat/integrations/rspec-rails'
 
