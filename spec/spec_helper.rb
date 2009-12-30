@@ -55,4 +55,28 @@ Spec::Runner.configure do |config|
   # == Notes
   #
   # For more information take a look at Spec::Runner::Configuration and Spec::Runner
+  config.extend(ControllerExampleHelpers::ExampleGroupMethods, :type => :controller)
+  config.include(ControllerExampleHelpers::ExampleMethods, :type => :controller)
+end
+
+def sign_in_as(user)
+  controller.stub!(:current_user).and_return(user)
+end
+
+def should_require_sign_in
+  response.should be_redirect
+  response.should redirect_to(new_user_session_path)
+end
+
+def should_require_admin
+  response.should be_redirect
+  response.should redirect_to(root_path)
+end
+
+def should_not_require_sign_in
+  response.should_not redirect_to(new_user_session_path)
+end
+
+def should_not_require_admin
+  response.should_not redirect_to(root_path)
 end

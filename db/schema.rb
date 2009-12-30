@@ -9,7 +9,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091227153919) do
+ActiveRecord::Schema.define(:version => 20091227160119) do
+
+  create_table "sales", :force => true do |t|
+    t.integer  "user_id"
+    t.decimal  "sub_total",  :precision => 10, :scale => 2
+    t.decimal  "tax",        :precision => 10, :scale => 2
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "sales", ["user_id"], :name => "index_sales_on_user_id"
 
   create_table "sessions", :force => true do |t|
     t.string   "session_id", :null => false

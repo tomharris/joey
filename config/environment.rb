@@ -19,7 +19,6 @@ Rails::Initializer.run do |config|
   config.gem "capistrano", :lib => false, :version => ">= 2.5.5"
   config.gem "capistrano-ext", :lib => false, :version => ">= 1.2.1"
   config.gem "mysql", :version => ">= 2.8.1"
-  config.gem "clearance"
   config.gem "will_paginate"
 
   # Only load the plugins named here, in the order given (default is alphabetical).

@@ -1,0 +1,20 @@
+<% form_for @sale do |f| -%>
+  <%= f.error_messages %>
+
+  <div class="span-4">
+    <%= f.label :sub_total, h(t(:sub_total)) %>
+  </div>
+  <div class="span-12 last">
+    <%= f.text_field :sub_total %>
+  </div>
+  <div class="span-4">
+    <%= f.label :tax, h(t(:tax)) %>
+  </div>
+  <div class="span-12 last">
+    <%= f.text_field :tax %>
+  </div>
+
+  <div class="span-16 last">
+    <%= f.submit "Submit" %>
+  </div>
+<% end -%>
