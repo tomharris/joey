@@ -9,7 +9,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091227160119) do
+ActiveRecord::Schema.define(:version => 20091230044554) do
+
+  create_table "customers", :force => true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.decimal  "balance",    :precision => 10, :scale => 2
+    t.text     "note"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "sales", :force => true do |t|
     t.integer  "user_id"

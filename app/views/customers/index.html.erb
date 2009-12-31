@@ -1,0 +1,28 @@
+<h1>Listing customers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= h(t(:name)) %></th>
+      <th><%= h(t(:balance)) %></th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+
+  <tbody>
+<% @customers.each do |customer| %>
+  <tr>
+    <td><%= h(customer.full_name) %></td>
+    <td><%= number_to_currency(customer.balance) %></td>
+    <td>
+      <%= link_to 'Edit', edit_customer_path(customer) %> |
+      <%= link_to 'Remove', customer, :confirm => 'Are you sure?', :method => :delete %>
+    </td>
+  </tr>
+<% end %>
+  </tbody>
+</table>
+
+<br />
+
+<%= link_to 'New customer', new_customer_path %>

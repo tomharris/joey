@@ -2,8 +2,16 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  submit: "Submit"
+
   # sales
   sub_total: "Sub Total"
   tax: "Tax"
   thank_you: "Thank You"
   new_sale: "New Sale"
+
+  # customers
+  name: "Name"
+  first_name: "First Name"
+  last_name: "Last Name"
+  balance: "Balance"

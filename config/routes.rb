@@ -9,6 +9,7 @@ ActionController::Routing::Routes.draw do |map|
   map.logout "logout", :controller => "user_sessions", :action => "destroy"
 
   map.resources :sales, :collection => { :thank_you => :get }
+  map.resources :customers
 
   # The priority is based upon order of creation: first created -> highest priority.
 
