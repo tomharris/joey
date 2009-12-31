@@ -9,13 +9,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091230044554) do
+ActiveRecord::Schema.define(:version => 20091231191018) do
 
   create_table "customers", :force => true do |t|
     t.string   "first_name"
     t.string   "last_name"
     t.decimal  "balance",    :precision => 10, :scale => 2
     t.text     "note"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "inventory_items", :force => true do |t|
+    t.string   "name"
+    t.decimal  "price",      :precision => 10, :scale => 2
     t.datetime "created_at"
     t.datetime "updated_at"
   end

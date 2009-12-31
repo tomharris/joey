@@ -1,0 +1,26 @@
+<h1>Listing inventory items</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= h(t(:name)) %></th>
+      <th><%= h(t(:price)) %></th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+
+<tbody>
+<% @inventory_items.each do |inventory_item| %>
+  <tr>
+    <td><%= h(inventory_item.name) %></td>
+    <td><%= number_to_currency(inventory_item.price) %></td>
+    <td><%= link_to 'Edit', edit_inventory_item_path(inventory_item) %> |
+    <%= link_to 'Remove', inventory_item, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+
+<br />
+
+<%= link_to 'New inventory_item', new_inventory_item_path %>

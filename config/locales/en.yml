@@ -15,3 +15,6 @@ en:
   first_name: "First Name"
   last_name: "Last Name"
   balance: "Balance"
+
+  # inventory items
+  price: "Price"

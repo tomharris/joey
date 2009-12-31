@@ -1,0 +1,20 @@
+<% form_for(@inventory_item) do |f| %>
+  <%= f.error_messages %>
+  
+  <div class="span-4">
+    <%= f.label :name, h(t(:name)) %>
+  </div>
+  <div class="span-12 last">
+    <%= f.text_field :name %>
+  </div>
+  <div class="span-4">
+    <%= f.label :price, h(t(:price)) %>
+  </div>
+  <div class="span-12 last">
+    <%= f.text_field :price %>
+  </div>
+
+  <div class="span-16 last">
+    <%= f.submit h(t(:submit)) %>
+  </div>
+<% end %>
