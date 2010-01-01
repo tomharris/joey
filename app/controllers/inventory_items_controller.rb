@@ -1,14 +1,10 @@
 class InventoryItemsController < ApplicationController
-  before_filter :require_user
+  before_filter :require_user, :only => [:index]
+  before_filter :require_admin, :except => [:index, :show]
 
   # GET /inventory_items
   def index
     @inventory_items = InventoryItem.all
-  end
-
-  # GET /inventory_items/1
-  def show
-    @inventory_item = InventoryItem.find(params[:id])
   end
 
   # GET /inventory_items/new
