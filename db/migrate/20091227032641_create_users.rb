@@ -1,8 +1,8 @@
 class CreateUsers < ActiveRecord::Migration
   def self.up
     create_table :users do |t|
-      t.string :first_name
-      t.string :last_name
+      t.string :first_name, :null => false
+      t.string :last_name, :null => false
       t.string :login, :null => false
       t.string :crypted_password, :null => false
       t.string :password_salt, :null => false
@@ -11,7 +11,7 @@ class CreateUsers < ActiveRecord::Migration
       t.datetime :last_request_at
       t.datetime :last_login_at
       t.datetime :current_login_at
-      t.boolean :admin
+      t.boolean :admin, :default => false, :null => false
       t.timestamps
     end
 

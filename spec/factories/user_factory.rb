@@ -5,3 +5,7 @@ Factory.define(:user) do |f|
   f.password { "pos123" }
   f.password_confirmation { "pos123" }
 end
+
+Factory.define(:admin_user, :parent => :user) do |f|
+  f.admin { true }
+end

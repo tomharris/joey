@@ -11,6 +11,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :sales, :collection => { :thank_you => :get }
   map.resources :customers
   map.resources :inventory_items
+  map.admin_dashboard "dashboard", :controller => "dashboard", :action => "admin"
 
   # The priority is based upon order of creation: first created -> highest priority.
 
