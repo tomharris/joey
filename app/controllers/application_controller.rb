@@ -30,7 +30,7 @@ class ApplicationController < ActionController::Base
       if current_user
         store_location
         flash[:notice] = "You must be logged out to access this page"
-        redirect_to account_path
+        redirect_to (current_user.admin? ? admin_dashboard_path : new_sale_path)
         return false
       end
     end
