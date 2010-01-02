@@ -3,6 +3,8 @@
 
 en:
   submit: "Submit"
+  bool_yes: "Yes"
+  bool_no: "No"
 
   # sales
   sub_total: "Sub Total"
@@ -18,3 +20,7 @@ en:
 
   # inventory items
   price: "Price"
+
+  # users
+  login: "Login"
+  admin: "Admin"

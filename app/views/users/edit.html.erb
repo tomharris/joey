@@ -3,7 +3,7 @@
 <% form_for @user, :url => account_path do |f| %>
   <%= f.error_messages %>
   <%= render :partial => "form", :object => f %>
-  <%= f.submit "Update" %>
+  <%= f.submit h(t(:submit)) %>
 <% end %>
 
-<br /><%= link_to "My Profile", account_path %>
+<%= link_to "User list", users_path %>

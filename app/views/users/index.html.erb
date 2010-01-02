@@ -1,0 +1,30 @@
+<h1>Listing customers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= h(t(:name)) %></th>
+      <th><%= h(t(:login)) %></th>
+      <th><%= h(t(:admin)) %></th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+
+  <tbody>
+<% @users.each do |user| %>
+  <tr>
+    <td><%= h(user.full_name) %></td>
+    <td><%= h(user.login) %></td>
+    <td><%= user.admin? ? h(t(:bool_yes)) : h(t(:bool_no)) %></td>
+    <td>
+      <%= link_to 'Edit', edit_user_path(user) %> |
+      <%= link_to 'Remove', user, :confirm => 'Are you sure?', :method => :delete %>
+    </td>
+  </tr>
+<% end %>
+  </tbody>
+</table>
+
+<br />
+
+<%= link_to 'New user', new_user_path %>
