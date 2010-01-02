@@ -6,20 +6,11 @@
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Major.create(:name => 'Daley', :city => cities.first)
 
-User.create do |u|
-  u.login = "admin"
-  u.first_name = "Admin"
-  u.last_name = "User"
-  u.password = "posadmin"
-  u.password_confirmation = "posadmin"
-  u.admin = true
+Dir[File.expand_path(File.dirname(__FILE__)) + "/seeds/shared/*.rb"].each do |file|
+  require file
 end
 
-User.create do |u|
-  u.login = "cashier"
-  u.first_name = "Cashier"
-  u.last_name = "User"
-  u.password = "poscashier"
-  u.password_confirmation = "poscashier"
-  u.admin = false
+#environment specific seeds
+Dir[File.expand_path(File.dirname(__FILE__)) + "/seeds/#{RAILS_ENV}/*.rb"].each do |file|
+  require file
 end
